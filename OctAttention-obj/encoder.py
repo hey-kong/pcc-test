@@ -19,7 +19,7 @@ saveDic = reload(None,'modelsave/obj/encoder_epoch_00800093.pth')
 model.load_state_dict(saveDic['encoder'])
 
 ###########Objct##############
-list_orifile = ['file/Ply/2851.ply']
+list_orifile = ['file/Ply/boxer_viewdep_vox9.ply', 'file/Ply/boxer_viewdep_vox10.ply']
 if __name__=="__main__":
     printl = CPrintl(expName+'/encoderPLY.txt')
     printl('_'*50,'OctAttention V0.4','_'*50)
@@ -33,7 +33,7 @@ if __name__=="__main__":
         ptName = os.path.splitext(os.path.basename(oriFile))[0] 
         for qs in [1]:
             ptNamePrefix = ptName
-            matFile,DQpt,refPt = dataPrepare(oriFile,saveMatDir='./Data/testPly',qs=qs,ptNamePrefix='',rotation=False)
+            matFile,DQpt,refPt = dataPrepare(oriFile,saveMatDir='./output/obj/data',qs=qs,ptNamePrefix='',rotation=False)
             # please set `rotation=True` in the `dataPrepare` function when processing MVUB data
             main(matFile,model,actualcode=True,printl =printl) # actualcode=False: bin file will not be generated
             print('_'*50,'pc_error','_'*50)

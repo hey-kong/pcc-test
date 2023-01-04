@@ -108,8 +108,8 @@ if __name__=="__main__":
 
     for oriFile in list_orifile: # from encoder.py
         ptName = os.path.basename(oriFile)[:-4]
-        matName = 'Data/testPly/'+ptName+'.mat'
-        binfile = expName+'/data/'+ptName+'.bin'
+        matName = './output/obj/data/'+ptName+'.mat'
+        binfile = expName+'/enc/'+ptName+'.bin'
         cell,mat =matloader(matName)
 
         # Read Sideinfo
@@ -127,5 +127,5 @@ if __name__=="__main__":
         ptrec = DeOctree(Code)
         # Dequantization
         DQpt = (ptrec*qs+offset)
-        pt.write_ply_data(expName+"/temp/test/rec.ply",DQpt)
+        pt.write_ply_data(expName+'/dec/rec_'+ptName+'.ply',DQpt)
         pt.pcerror(p,DQpt,None,'-r 1',None).wait()

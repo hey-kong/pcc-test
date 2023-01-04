@@ -21,9 +21,11 @@ def makedFile(dir):
 if __name__=="__main__":
 
 ######For MPEG,MVUB######    
+    # ply files
     # oriDir = './train/longdress/Ply/*.ply'
     oriDir = './train/soldier/Ply/*.ply'
-    outDir = './train/obj/'
+    # mat files
+    outDir = './train/obj/train/'
     ptNamePrefix = 'MPEG_' # 'MVUB_'
 
     printl = CPrintl('Preparedata/makedFileObj.log')

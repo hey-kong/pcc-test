@@ -158,7 +158,7 @@ def main(fileName,model,actualcode = True,showRelut=True,printl = print):
     p = np.transpose(mat[cell[1,0]]['Location'])
     ptNum = p.shape[0]
     ptName = os.path.basename(matDataPath)
-    outputfile = expName+"/data/"+ptName[:-4]+".bin"
+    outputfile = expName+"/enc/"+ptName[:-4]+".bin"
     binsz,oct_len,elapsed,binszList,octNumList = compress(oct_data_seq,outputfile,model,actualcode,printl,showRelut)
     if showRelut:
         printl("ptName: ",ptName)
