@@ -163,3 +163,6 @@ train/
 output/
 log/
 temp/
+tmp/
+datasets/
+results/
