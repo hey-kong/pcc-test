@@ -46,7 +46,7 @@ class BasicOptionHandler():
         parser.add_argument('--seed', type=float, default=None, help='Set random seed for reproducibility')
 
         # Logging options
-        parser.add_argument('--result_folder', type=str, default='results', help='Indicate the result folder.')
+        parser.add_argument('--result_folder', type=str, default='output', help='Indicate the result folder.')
         parser.add_argument('--log_file', type=str, default='', help='Log file name.')
         parser.add_argument('--log_file_only', type=str2bool, nargs='?', const=True, default=False, help='Only prints to the log file if set True.')
         parser.add_argument('--print_freq', type=int, default=20, help='Frequency of displaying results.')
