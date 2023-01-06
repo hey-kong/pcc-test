@@ -33,8 +33,8 @@ if __name__=="__main__":
     printl('_'*50,'OctAttention V0.4','_'*50)
     printl(datetime.datetime.now().strftime('%Y-%m-%d:%H:%M:%S'))
     printl('load checkpoint', saveDic['path'])
-    addFiles('train/loot/Ply/')
-    addFiles('train/redandblack/Ply/')
+    addFiles('../datasets/vfb/loot/')
+    addFiles('../datasets/vfb/redandblack/')
     for oriFile in list_orifile:
         printl(oriFile)
         if (os.path.getsize(oriFile)>300*(1024**2)):#300M

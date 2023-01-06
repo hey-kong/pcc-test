@@ -43,7 +43,7 @@ Create a `datasets` folder then put all the datasets below. One may create soft 
 
 We use the first *Ford* sequences for training and the other two sequences for benchmarking, arranged as follows:
 ```bash
-${ROOT_OF_THE_REPO}/datasets/ford
+${ROOT_OF_THE_REPO}/../datasets/ford
                                ├── Ford_01_q_1mm
                                ├── Ford_02_q_1mm
                                └── Ford_03_q_1mm

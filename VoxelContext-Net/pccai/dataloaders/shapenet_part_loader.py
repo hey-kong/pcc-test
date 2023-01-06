@@ -18,7 +18,7 @@ from tqdm import tqdm
 from functools import partial
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-dataset_path_default=os.path.abspath(os.path.join(BASE_DIR, '../../datasets/shapenet_part/')) # the default dataset path
+dataset_path_default=os.path.abspath(os.path.join(BASE_DIR, '../../../datasets/shapenet_part/')) # the default dataset path
 
 
 def pc_normalize(pc):

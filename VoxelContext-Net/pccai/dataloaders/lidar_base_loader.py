@@ -30,7 +30,7 @@ class VFBBase(data.Dataset):
 
         # Common options of the dataset
         self.return_intensity = data_config.get('return_intensity', False)
-        self.dataset_path = data_config.get('dataset_path', '../../datasets/vfb/') # the default dataset path
+        self.dataset_path = data_config.get('dataset_path', '../../../datasets/vfb/') # the default dataset path
         self.dataset_path = os.path.abspath(os.path.join(base_dir, self.dataset_path))
         self.translate = data_config.get('translate', [0, 0, 0])
         self.scale = data_config.get('scale', 1)
@@ -74,7 +74,7 @@ class FordBase(data.Dataset):
 
         # Common options of the dataset
         self.return_intensity = data_config.get('return_intensity', False)
-        self.dataset_path = data_config.get('dataset_path', '../../datasets/ford/') # the default dataset path
+        self.dataset_path = data_config.get('dataset_path', '../../../datasets/ford/') # the default dataset path
         self.dataset_path = os.path.abspath(os.path.join(base_dir, self.dataset_path))
         self.translate = data_config.get('translate', [0, 0, 0])
         self.scale = data_config.get('scale', 1)
@@ -115,7 +115,7 @@ class QnxadasBase(data.Dataset):
     def __init__(self, data_config, sele_config, **kwargs):
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        dataset_path_default = os.path.abspath(os.path.join(base_dir, '../../datasets/qnxadas')) # the default dataset path
+        dataset_path_default = os.path.abspath(os.path.join(base_dir, '../../../datasets/qnxadas')) # the default dataset path
 
         # Common options of the dataset
         self.return_intensity = data_config.get('return_intensity', False)
@@ -154,7 +154,7 @@ class KITTIBase(data.Dataset):
     def __init__(self, data_config, sele_config, **kwargs):
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        dataset_path = os.path.abspath(os.path.join(base_dir, '../../datasets/kitti/dataset/sequences_subset_first_1000/')) # the default dataset path
+        dataset_path = os.path.abspath(os.path.join(base_dir, '../../../datasets/kitti/dataset/sequences_subset_first_1000/')) # the default dataset path
         
         # Other specific options
         self.translate = data_config.get('translate', [0, 0, 0])

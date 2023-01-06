@@ -12,8 +12,8 @@ CODEC_CONFIG="${HOME_DIR}/config/codec_config/ford_voxel_context_oct_trunc_12bit
 CHECKPOINTS="${HOME_DIR}/results/train_ford_vcn/epoch_newest.pth"
 CHECKPOINT_NET_CONFIG="False"
 NET_CONFIG="${HOME_DIR}/config/net_config/voxelcontext_entropycoder_9.yaml"
-INPUT="${HOME_DIR}/datasets/ford/Ford_02_q_1mm ${HOME_DIR}/datasets/ford/Ford_03_q_1mm"
-# INPUT="${HOME_DIR}/datasets/ford/ford_02_q1mm/Ford_02_vox1mm-0100.ply ${HOME_DIR}/datasets/ford/ford_02_q1mm/Ford_02_vox1mm-0101.ply ${HOME_DIR}/datasets/ford/ford_02_q1mm/Ford_02_vox1mm-1599.ply ${HOME_DIR}/datasets/ford/ford_03_q1mm/Ford_03_vox1mm-0200.ply ${HOME_DIR}/datasets/ford/ford_03_q1mm/Ford_03_vox1mm-0201.ply ${HOME_DIR}/datasets/ford/ford_03_q1mm/Ford_03_vox1mm-1699.ply"
+INPUT="${HOME_DIR}/../datasets/ford/Ford_02_q_1mm ${HOME_DIR}/../datasets/ford/Ford_03_q_1mm"
+# INPUT="${HOME_DIR}/../datasets/ford/ford_02_q1mm/Ford_02_vox1mm-0100.ply ${HOME_DIR}/../datasets/ford/ford_02_q1mm/Ford_02_vox1mm-0101.ply ${HOME_DIR}/../datasets/ford/ford_02_q1mm/Ford_02_vox1mm-1599.ply ${HOME_DIR}/../datasets/ford/ford_03_q1mm/Ford_03_vox1mm-0200.ply ${HOME_DIR}/../datasets/ford/ford_03_q1mm/Ford_03_vox1mm-0201.ply ${HOME_DIR}/../datasets/ford/ford_03_q1mm/Ford_03_vox1mm-1699.ply"
 
 COMPUTE_D2="True"
 MPEG_REPORT="mpeg_report.csv"

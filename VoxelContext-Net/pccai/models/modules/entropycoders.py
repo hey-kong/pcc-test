@@ -136,7 +136,7 @@ class VoxelContextEntropyCoder(nn.Module):
     def forward(self, voxel_context, do_softmax=False):
         use_cuda = voxel_context.is_cuda #check whether running GPU or CPU job
 
-        """orgnize data according to network input dimensions"""
+        """organize data according to network input dimensions"""
         voxel_context = voxel_context.reshape(-1, voxel_context.shape[-1])
         voxel_data_shape = [np.ceil((voxel_context.shape[-1]-5)**(1/3)).astype(int)]*3
         voxel_data_shape = list(voxel_context.shape[:-1]) + voxel_data_shape

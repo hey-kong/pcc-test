@@ -7,7 +7,7 @@
 
 
 # Rendering settings
-FILE="./datasets/ford/Ford_01_q_1mm/Ford_01_vox1mm-0100.ply"
+FILE="./../datasets/ford/Ford_01_q_1mm/Ford_01_vox1mm-0100.ply"
 RADIUS=-1
 RADIUS_ORIGIN=-1
 VIEW_FILE=.

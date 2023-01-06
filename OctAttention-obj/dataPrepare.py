@@ -22,8 +22,8 @@ if __name__=="__main__":
 
 ######For MPEG,MVUB######    
     # ply files
-    # oriDir = './train/longdress/Ply/*.ply'
-    oriDir = './train/soldier/Ply/*.ply'
+    # oriDir = '../datasets/vfb/longdress/*.ply'
+    oriDir = '../datasets/vfb/soldier/*.ply'
     # mat files
     outDir = './train/obj/train/'
     ptNamePrefix = 'MPEG_' # 'MVUB_'

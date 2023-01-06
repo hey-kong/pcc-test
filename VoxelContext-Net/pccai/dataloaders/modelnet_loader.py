@@ -18,7 +18,7 @@ from pccai.utils.convert_octree import OctreeOrganizer
 import pccai.utils.logger as logger
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-dataset_path_default=os.path.abspath(os.path.join(BASE_DIR, '../../datasets/modelnet/')) # the default dataset path
+dataset_path_default=os.path.abspath(os.path.join(BASE_DIR, '../../../datasets/modelnet/')) # the default dataset path
 
 
 def gen_rotate():
@@ -90,7 +90,7 @@ class ModelNetSimple(ModelNetBase):
 
         # By using the cache file, the data is no longer generated on the fly but the loading becomes much faster
         if self.use_cache != '':
-            cache_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../datasets/', self.use_cache)
+            cache_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../../datasets/', self.use_cache)
             if os.path.exists(cache_file): # the cache file already exist
                 logger.log.info("Loading pre-processed ModelNet40 cache file...")
                 with open(cache_file, 'rb') as f:
