@@ -8,7 +8,7 @@ PY_NAME="${HOME_DIR}/experiments/bench.py"
 
 # Main configurations
 HETERO="False"
-CODEC_CONFIG="${HOME_DIR}/config/codec_config/ford_voxel_context_oct_trunc_12bits.yaml"
+CODEC_CONFIG="${HOME_DIR}/config/codec_config/vfb_voxel_context_oct.yaml"
 CHECKPOINTS="${HOME_DIR}/output/train_vfb/epoch_0.pth"
 CHECKPOINT_NET_CONFIG="False"
 NET_CONFIG="${HOME_DIR}/config/net_config/voxelcontext_entropycoder_9.yaml"

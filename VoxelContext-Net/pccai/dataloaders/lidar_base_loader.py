@@ -154,7 +154,7 @@ class KITTIBase(data.Dataset):
     def __init__(self, data_config, sele_config, **kwargs):
 
         base_dir = os.path.dirname(os.path.abspath(__file__))
-        dataset_path = os.path.abspath(os.path.join(base_dir, '../../../datasets/kitti/dataset/sequences_subset_first_1000/')) # the default dataset path
+        dataset_path = os.path.abspath(os.path.join(base_dir, '../../../datasets/semanticKITTI/dataset/sequences/')) # the default dataset path
         
         # Other specific options
         self.translate = data_config.get('translate', [0, 0, 0])

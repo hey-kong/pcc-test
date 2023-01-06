@@ -1,0 +1,37 @@
+# Copyright (c) 2010-2022, InterDigital
+# All rights reserved. 
+
+# See LICENSE under the root folder.
+
+
+# Configure the encoder/decoder for actual compression/decompression
+
+# Codec class
+codec: 'octarray_partition'
+
+# if not benchmarking CRM keep three options below to be False
+up_sample: False #put True only if using CRM with upsampling
+lossless: False #put True only if using lossless CRM
+lossless_pred: False #if lossless_pred is True, lossless is False
+
+translate: [1024, 1024, 1024] #[0, 0, 0], translate the PC using -bbox_min
+scale: 1
+
+# Options about octree partitioning
+octree_cfg:
+    bbox_min: [0, 0, 0] #[-131072, -131072, -131072], if translation is non-zero make the origin zero
+    bbox_max: [2048, 2048, 2048] #[131072, 131072, 131072], if translation is non-zero put here (bbox_max-bbox_min)
+    point_min: 0 # marked as skip if points in a block less than this number
+    point_max: 2048 # keep splitting if points in a block larger than this number
+    level_min: 4
+    level_max: 10
+    return_octree_blocks: all # (False, dense, skip, all)
+
+# size of the voxel neighborhood
+normalized_vox_dist: 9
+
+max_num_points: inf # maximum number of points that can be handled
+entropy_coder: rans
+peak_value: 30000
+
+# Other options to be added.
