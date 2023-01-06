@@ -53,10 +53,11 @@ def aggregate_sequence_log(log_dict_all):
             else: # update the existing sequence
                 log_dict_ckpt_aggregate[-1]['rec_num_points'] += log_dict['rec_num_points']
                 log_dict_ckpt_aggregate[-1]['bit_total'] += log_dict['bit_total']
-                log_dict_ckpt_aggregate[-1]['d1_psnr'] += log_dict['d1_psnr']
                 log_dict_ckpt_aggregate[-1]['seq_cnt'] += 1
-                if 'd2_psnr' in log_dict:
-                    log_dict_ckpt_aggregate[-1]['d2_psnr'] += log_dict['d2_psnr']
+                # if 'd1_psnr' in log_dict:
+                #     log_dict_ckpt_aggregate[-1]['d1_psnr'] += log_dict['d1_psnr']
+                # if 'd2_psnr' in log_dict:
+                #     log_dict_ckpt_aggregate[-1]['d2_psnr'] += log_dict['d2_psnr']
                 if 'enc_time' in log_dict:
                     log_dict_ckpt_aggregate[-1]['enc_time'] += float(log_dict['enc_time'])
                 if 'dec_time' in log_dict:
@@ -64,9 +65,10 @@ def aggregate_sequence_log(log_dict_all):
 
         # Take average for each sequence
         for idx, log_dict in enumerate(log_dict_ckpt_aggregate):
-            log_dict['d1_psnr'] /= log_dict['seq_cnt']
-            if 'd2_psnr' in log_dict:
-                log_dict['d2_psnr'] /= log_dict['seq_cnt']
+            # if 'd1_psnr' in log_dict:
+            #     log_dict['d1_psnr'] /= log_dict['seq_cnt']
+            # if 'd2_psnr' in log_dict:
+            #     log_dict['d2_psnr'] /= log_dict['seq_cnt']
             if 'enc_time' in log_dict:
                 log_dict['enc_time'] = str(log_dict['enc_time'])
             if 'dec_time' in log_dict:

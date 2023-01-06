@@ -123,11 +123,15 @@ def benchmark_checkpoints(opt):
         log_dict_all[filename_ckpt] = log_dict_ckpt
 
         # Compute the average metrics for this current checkpoint
-        basic_metrics = [(log_dict['bpp'], log_dict['bit_total'], log_dict['num_points'], log_dict['d1_psnr'],
-            log_dict['d2_psnr'] if opt.compute_d2 else -1) for log_dict in log_dict_ckpt]
-        avg_bpp, avg_size, avg_num_points, avg_d1_psnr, avg_d2_psnr = np.mean(np.array(basic_metrics), axis=0).tolist()
-        avg_metrics = {'bpp': avg_bpp, 'seq_bpp': avg_size / avg_num_points, 'd1_psnr': avg_d1_psnr}
-        if avg_d2_psnr > 0: avg_metrics['d2_psnr'] = avg_d2_psnr
+        # basic_metrics = [(log_dict['bpp'], log_dict['bit_total'], log_dict['num_points'], log_dict['d1_psnr'],
+        #     log_dict['d2_psnr'] if opt.compute_d2 else -1) for log_dict in log_dict_ckpt]
+        # avg_bpp, avg_size, avg_num_points, avg_d1_psnr, avg_d2_psnr = np.mean(np.array(basic_metrics), axis=0).tolist()
+        # avg_metrics = {'bpp': avg_bpp, 'seq_bpp': avg_size / avg_num_points, 'd1_psnr': avg_d1_psnr}
+        # if avg_d2_psnr > 0: avg_metrics['d2_psnr'] = avg_d2_psnr
+        basic_metrics = [(log_dict['bpp'], log_dict['bit_total'], log_dict['num_points'] if opt.compute_d2 else -1) for
+                         log_dict in log_dict_ckpt]
+        avg_bpp, avg_size, avg_num_points = np.mean(np.array(basic_metrics), axis=0).tolist()
+        avg_metrics = {'bpp': avg_bpp, 'seq_bpp': avg_size / avg_num_points}
 
         # Log current metrics for the check point 
         message = 'Compression metrics --- time: %f, ' % elapse
