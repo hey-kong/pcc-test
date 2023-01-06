@@ -15,16 +15,26 @@ import pt as pointCloud
 ## decoder.py relys on this model here
 ## do not move this lines to somewhere else
 model = model.to(device)
-saveDic = reload(None,'modelsave/obj/encoder_epoch_00800093.pth')
+saveDic = reload(None,'output/obj/checkpoint/encoder_epoch_00800110.pth')
 model.load_state_dict(saveDic['encoder'])
 
 ###########Objct##############
-list_orifile = ['file/Ply/boxer_viewdep_vox9.ply', 'file/Ply/boxer_viewdep_vox10.ply']
+list_orifile = []
+
+def addFiles(dir):
+    filenames=os.listdir(dir)
+    print(filenames)
+    for f in filenames:
+        list_orifile.append(os.path.join(dir,f))
+
+
 if __name__=="__main__":
     printl = CPrintl(expName+'/encoderPLY.txt')
     printl('_'*50,'OctAttention V0.4','_'*50)
     printl(datetime.datetime.now().strftime('%Y-%m-%d:%H:%M:%S'))
     printl('load checkpoint', saveDic['path'])
+    addFiles('train/loot/Ply/')
+    addFiles('train/redandblack/Ply/')
     for oriFile in list_orifile:
         printl(oriFile)
         if (os.path.getsize(oriFile)>300*(1024**2)):#300M
