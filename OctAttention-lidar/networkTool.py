@@ -14,8 +14,8 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Network parameters
 bptt = 1024 # Context window length
-expName = './Exp/Kitti'
-DataRoot = './Data/Lidar'
+expName = './output/lidar'
+DataRoot = './train/lidar'
 
 checkpointPath = expName+'/checkpoint'
 levelNumK = 4

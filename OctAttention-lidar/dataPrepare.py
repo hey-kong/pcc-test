@@ -21,16 +21,16 @@ def makedFile(dir):
 if __name__=="__main__":
 
 #####For KITTI######
-    oriDir = '/semanticKITTI/dataset/sequences/'
-    outDir = 'Data/Lidar/train/'
+    oriDir = '../datasets/semanticKITTI/dataset/sequences/'
+    outDir = './train/lidar/train/'
     ptNamePrefix = 'Kitti_'
 
     printl = CPrintl('Preparedata/makedFileLidar.log')
     makeFileList = makedFile(outDir+'*.mat')
-    for folder in range(0,11): # kitti folder, 00-10/11-21 folders for training/testing.
+    for folder in range(0, 11): # kitti folder, 00-10/11-21 folders for training/testing.
         folder = '{:02d}'.format(folder)
         fileList = sorted(glob.glob(oriDir+folder+'/velodyne/*.bin'))
-        for n,file in enumerate(fileList):
+        for n, file in enumerate(fileList):
             fileName = folder+file.split('/')[-1][:-4]
             dataName = outDir+'Kitti_'+fileName+'.mat'
             if dataName in makeFileList:   

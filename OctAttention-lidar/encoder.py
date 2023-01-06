@@ -29,7 +29,7 @@ if __name__=="__main__":
         printl(oriFile)
         ptName = os.path.splitext(os.path.basename(oriFile))[0] 
         for qlevel in [12]:
-            matFile,DQpt,normalizePt = dataPrepare(oriFile,saveMatDir='./Data/testPly',offset='min', qs=2/(2**qlevel-1),rotation=False,normalize=True)
+            matFile,DQpt,normalizePt = dataPrepare(oriFile,saveMatDir='./output/lidar/data',offset='min', qs=2/(2**qlevel-1),rotation=False,normalize=True)
             main(matFile,model,actualcode=True,printl =printl) # actualcode=False: bin file will not be generated
             print('_'*50,'pc_error','_'*50)
             pointCloud.pcerror(normalizePt,DQpt,None,'-r 1',None).wait()
